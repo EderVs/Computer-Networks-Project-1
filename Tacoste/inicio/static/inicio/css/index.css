@@ -1,0 +1,211 @@
+a {
+    outline: none;
+    text-decoration: none;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+
+a:active {
+    color: black;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+}
+
+footer {
+    background-color: #262626;
+    color: white;
+    font-size: 14px;
+    padding: 54px 20%;
+    width: 60%;
+}
+
+footer a:link {
+    color: white;
+}
+
+footer a:visited {
+    color: white;
+}
+
+footer a:hover {
+    color: white;
+}
+
+footer a:active {
+    color: white;
+}
+
+header {
+    border-bottom: 0.20px solid #e5e5e5;
+    height: 50px;
+    margin: 0px;
+    padding: 13px;
+    position: relative;
+}
+
+header div {
+    display: inline;
+}
+
+#botones-header {
+    float: right;
+    margin-top: 12px;
+    margin-right: 20%;
+    position: relative;
+    height: 50px;
+}
+
+#canasta {
+    display: inline-block;
+}
+
+#canasta img {
+    height: 25px;
+    margin-bottom: -9px;
+}
+
+#contenido {
+    background-color: white;
+    position: absolute;
+    top: 446px;
+    width: 100%;
+    z-index: 1;
+}
+
+#footer-enlaces {
+    margin-top: 20px;
+}
+
+#logo {
+    display: inline-block;
+    margin-left: 20%;
+}
+
+#logo img {
+    height: 50px;
+}
+
+#privacidad-terminos {
+    border-top: 1px solid white;
+    padding-top: 20px;
+}
+
+#sucursales {
+    margin: 30px auto;
+    margin-bottom: 40px;
+    width: 1174px;
+}
+
+#sucursales-titulo {
+    margin-bottom: 10px;
+}
+
+.boton-header {
+    display: inline;
+    border: 1px solid green;
+    border-radius: 2px;
+    padding: 12px 5px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.caja {
+    border: 1px solid #E0E0E0;
+    display: inline-block;
+    height: 160px;
+    margin-bottom: 24px;
+    width: 573px;
+}
+
+.caja:nth-child(even) {
+    margin-left: 20px;
+}
+
+.caja h4 {
+    margin-top: 12px;
+}
+
+.caja img {
+    display: inline-block;
+    height: 160px;
+    position: absolute;
+    width: 160px;
+}
+
+.caja-contenido {
+    display: inline-block;
+    padding: 17px 20px;
+    width: 373px;
+    height: 126px;
+}
+
+.caja-direccion {
+    display: block;
+}
+
+.footer-enlaces {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.hay-pedido {
+    background-color: red;
+    color: white;
+    border-radius:10px;
+    display:inline-block;
+    height: 14px;
+}
+
+.imagen-grande {
+    height: 370px;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+}
+
+.imagen-grande img {
+    display: block;
+    margin: 0 auto;
+    width: 1500px;
+}
+
+.inicio-sesion {
+    border-color: #E0E0E0;
+}
+
+.logo {
+    border-bottom: 0.20px solid #FFF;
+    display: block;
+    padding-bottom: 20px;
+}
+
+.logo img {
+    height: 50px;
+
+}
+
+.registrate {
+    border-color: #262626;
+    background-color: #262626;
+    color: white;
+    padding: 12px 13px;
+}
+
+.sucursal-direccion {
+    margin-bottom: 0;
+    margin-top: 12px;
+}

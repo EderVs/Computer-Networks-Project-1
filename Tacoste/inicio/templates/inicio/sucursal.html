@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Tacoste | Sucursal</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'inicio/css/index.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'inicio/css/sucursal.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Nunito" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div id="logo">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'inicio/img/Tacoste-logo.png' %}">
+                </a>
+            </div>
+            <div id="botones-header">
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}"><div class="boton inicio-sesion boton-header">Cerrar sesion</div></a>
+                <a href="{% url 'canasta' %}"><picture id="canasta">
+                    <img src="{% static 'inicio/img/shopping-cart.png' %}">
+                </picture></a>
+                {% if hay_pedido %}
+                <div class="hay-pedido">*</div>
+                {% endif %}
+                {% else %}
+                <a href="{% url 'login' %}"><div class="boton inicio-sesion boton-header">Iniciar sesion</div></a>
+                <div class="boton registrate boton-header">Regístrate</div>
+                {% endif %}
+            </div>
+        </header>
+        <div class="imagen-grande">
+            <picture>
+                <img src="{% static 'inicio/img/BLOG-TACOS.png' %}">
+            </picture>
+            <div class="imagen-grande-caja-fantasma">
+                <div class="imagen-grande-caja">
+                    <h2 class="sucursal-direccion">
+                        <span class="caja-direccion sucursal-calle">
+                            {{sucursal.calle}} {{sucursal.numexterior}}
+                        </span>
+                        <span class="caja-direccion sucursal-colonia">
+                            {{sucursal.colonia}}, {{ sucursal.municipio }}
+                        </span>
+                        <span class="caja-direccion sucursal-estado">
+                            {{ sucursal.cp.estado }}
+                        </span>
+                    </h2>
+                    <h3>
+                        <span class="sucursal-telefono">
+                            {% if sucursal.telefono %}
+                            {{ sucursal.telefono.telefono }}
+                            {% else %}
+                            Sin número teléfonico
+                            {% endif %}
+                        </span>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div id="contenido">
+            <nav>
+                <a href="{% url 'sucursal' sucursal.idsucursal 'entradas' %}">
+                    {% if parte_menu == 'entradas' %}
+                    <span class="menu-nav menu-nav-highlight">
+                        Entradas
+                    </span>
+                    {% else %}
+                    <span class="menu-nav">
+                        Entradas
+                    </span>
+                    {% endif %}
+                </a>
+                <a href="{% url 'sucursal' sucursal.idsucursal 'gringas-quecas-y-volcanes' %}">
+                    {% if parte_menu == 'gringas-quecas-y-volcanes' %}
+                    <span class="menu-nav menu-nav-highlight">
+                        Gringas, Quecas y Volcanes
+                    </span>
+                    {% else %}
+                    <span class="menu-nav">
+                        Gringas, Quecas y Volcanes
+                    </span>
+                    {% endif %}
+                </a>
+                <a href="{% url 'sucursal' sucursal.idsucursal 'del-cazo' %}">
+                    {% if parte_menu == 'del-cazo' %}
+                    <span class="menu-nav menu-nav-highlight">
+                        Del Cazo
+                    </span>
+                    {% else %}
+                    <span class="menu-nav">
+                        Del Cazo
+                    </span>
+                    {% endif %}
+                </a>
+                <a href="{% url 'sucursal' sucursal.idsucursal 'alambres' %}">
+                    {% if parte_menu == 'alambres' %}
+                    <span class="menu-nav menu-nav-highlight">
+                        Alambres
+                    </span>
+                    {% else %}
+                    <span class="menu-nav">
+                        Alambres
+                    </span>
+                    {% endif %}
+                </a>
+                <a href="{% url 'sucursal' sucursal.idsucursal 'sopes-y-huaraches' %}">
+                    {% if parte_menu == 'sopes-y-huaraches' %}
+                    <span class="menu-nav menu-nav-highlight">
+                        Sopes y Huaraches
+                    </span>
+                    {% else %}
+                    <span class="menu-nav">
+                        Sopes y Huaraches
+                    </span>
+                    {% endif %}
+                </a>
+                <a href="{% url 'sucursal' sucursal.idsucursal 'enchiladas' %}">
+                    {% if parte_menu == 'enchiladas' %}
+                    <span class="menu-nav menu-nav-highlight">
+                        Enchiladas
+                    </span>
+                    {% else %}
+                    <span class="menu-nav">
+                        Enchiladas
+                    </span>
+                    {% endif %}
+                </a>
+                <a href="{% url 'sucursal' sucursal.idsucursal 'quesos' %}">
+                    {% if parte_menu == 'quesos' %}
+                    <span class="menu-nav menu-nav-highlight">
+                        Quesos
+                    </span>
+                    {% else %}
+                    <span class="menu-nav">
+                        Quesos
+                    </span>
+                    {% endif %}
+                </a>
+                <a href="{% url 'sucursal' sucursal.idsucursal 'ensaladas' %}">
+                    {% if parte_menu == 'ensaladas' %}
+                    <span class="menu-nav menu-nav-highlight">
+                        Ensaladas
+                    </span>
+                    {% else %}
+                    <span class="menu-nav">
+                        Ensaladas
+                    </span>
+                    {% endif %}
+                </a>
+                <a href="{% url 'sucursal' sucursal.idsucursal 'tacos' %}">
+                    {% if parte_menu == 'tacos' %}
+                    <span class="menu-nav menu-nav-highlight">
+                        Tacos
+                    </span>
+                    {% else %}
+                    <span class="menu-nav">
+                        Tacos
+                    </span>
+                    {% endif %}
+                </a>
+                <a href="{% url 'sucursal' sucursal.idsucursal 'bebidas' %}">
+                    {% if parte_menu == 'bebidas' %}
+                    <span class="menu-nav menu-nav-highlight">
+                        Bebidas
+                    </span>
+                    {% else %}
+                    <span class="menu-nav">
+                        Bebidas
+                    </span>
+                    {% endif %}
+                </a>
+                <a href="{% url 'sucursal' sucursal.idsucursal 'hamburguesas' %}">
+                    {% if parte_menu == 'hamburguesas' %}
+                    <span class="menu-nav menu-nav-highlight">
+                        Hamburguesas
+                    </span>
+                    {% else %}
+                    <span class="menu-nav">
+                        Hamburguesas
+                    </span>
+                    {% endif %}
+                </a>
+                <a href="{% url 'sucursal' sucursal.idsucursal 'salsas' %}">
+                    {% if parte_menu == 'salsas' %}
+                    <span class="menu-nav menu-nav-highlight">
+                        Salsas
+                    </span>
+                    {% else %}
+                    <span class="menu-nav">
+                        Salsas
+                    </span>
+                    {% endif %}
+                </a>
+                <a href="{% url 'sucursal' sucursal.idsucursal 'tortas' %}">
+                    {% if parte_menu == 'tortas' %}
+                    <span class="menu-nav menu-nav-highlight">
+                        Tortas
+                    </span>
+                    {% else %}
+                    <span class="menu-nav">
+                        Tortas
+                    </span>
+                    {% endif %}
+                </a>
+                <a href="{% url 'sucursal' sucursal.idsucursal 'postres' %}">
+                    {% if parte_menu == 'postres' %}
+                    <span class="menu-nav menu-nav-highlight">
+                        Postres
+                    </span>
+                    {% else %}
+                    <span class="menu-nav">
+                        Postres
+                    </span>
+                    {% endif %}
+                </a>
+            </nav>
+            <div id="menu">
+                <h2 id="menu-titulo">{{ parte_menu_titulo }}</h2>
+                <div>
+                    {% for producto in productos %}
+                    {% if user.is_authenticated%}
+                    <a href="{% url 'agregar_producto' sucursal.idsucursal producto.idproducto parte_menu %}">
+                    {% endif %}
+                        <article class="caja">
+                        <div class="caja-contenido">
+                            <h3 class="platillo-info">
+                                <span class="platillo-nombre">
+                                    {{ producto.nombre }}
+                                </span>
+                            </h3>
+                            <h4>
+                                <span class="platillo-descripcion">
+                                    {{ producto.descripcion }}
+                                </span>
+                                <span class="platillo-precio">
+                                    ${{ producto.precio }}
+                                </span>
+                            </h4>
+                        </div>
+                    <img src="{% static 'inicio/img/sucursal.jpg' %}">
+                    </article>
+                    {% if user.is_authenticated%}
+                    </a>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <footer>
+                <div>
+                    <picture class="logo">
+                        <img src="{% static 'inicio/img/Tacoste-logo.png' %}">
+                    </picture>
+                    <div id="footer-enlaces">
+                        <span class="footer-enlaces">El mejor Team para Tacos</span>
+                        <span class="footer-enlaces">©2018</span>
+                        <div id="privacidad-terminos">
+                            <a href="https://github.com/EderVs/ProyectoFinalFBD/blob/master/Base%20de%20Datos/Documentos/aviso_privacidad.pdf"><span class="footer-enlaces">Privacidad</span></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

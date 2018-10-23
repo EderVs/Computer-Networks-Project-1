@@ -1,0 +1,66 @@
+nav {
+    border-bottom: 1px solid #E0E0E0;
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    width: 1435px;
+}
+
+#menu {
+    margin: 30px auto;
+    margin-bottom: 40px;
+    width: 1174px;
+}
+
+#menu-titulo {
+    margin-bottom: 10px;
+}
+
+.caja-contenido {
+    position: relative;
+}
+
+.caja-contenido h4 {
+    margin-bottom: 0px;
+}
+
+.imagen-grande-caja-fantasma {
+    display: block;
+    margin: 58px 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.imagen-grande-caja {
+    background-color: white;
+    border-radius: 4px;
+    display: block;
+    height: 192px;
+    margin: 0 auto;
+    padding: 32px;
+    width: 400px;
+}
+
+.menu-nav {
+    margin: auto 12px;
+}
+
+.menu-nav-highlight {
+    color: #43A422;
+}
+
+.platillo-descripcion {
+    display: inline-flex;
+}
+
+.platillo-info {
+    margin: 0px
+}
+
+.platillo-precio {
+    bottom: 12px;
+    left: 20px;
+    position: absolute;
+}
